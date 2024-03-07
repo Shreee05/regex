@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Email Validation</h1>
+        <form action="/validate-email" method="POST">
+            <label for="email">Enter Email Address:</label>
+            <input type="text" id="email" name="email" required>
+            <button type="submit">Validate Email</button>
+        </form>
+    </div>
+</body>

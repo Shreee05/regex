@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Regex Test Result</h1>
+        {% for result in results %}
+        <div class="result">
+            <p><strong>Test String:</strong> {{ result['test_string'] }}</p>
+            {% if result['match'] %}
+            <p><strong>Match:</strong> {{ result['match'].group() }}</p>
+            {% if result['matched_groups'] %}
+            <p><strong>Matched Groups:</strong></p>
+            <ul>
+                {% for group in result['matched_groups'] %}
+                <li>{{ group }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %} {% else %}
+            <p>No match found.</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        <a href="/">Back to Regex Tester</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Tester</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Regex Tester</h1>
+        <form action="/regex-test" method="POST">
+            <label for="regex_pattern">Enter Regular Expression:</label>
+            <input type="text" id="regex_pattern" name="regex_pattern" required>
+            <label for="test_strings">Enter Test Strings (one per line):</label>
+            <textarea id="test_strings" name="test_strings" rows="5" required></textarea>
+            <button type="submit">Test Regex</button>
+        </form>
+        <hr>
+        <h2>Email Validation</h2>
+        <p>Validate if a given email address is valid or not:</p>
+        <a href="/validate-email">Validate Email Address</a>
+    </div>
+</body>
+
+</html>
